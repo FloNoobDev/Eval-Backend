@@ -5,7 +5,7 @@ function validate() {
 
     for (let i = 0; i < formfields.length; i++) {
         if (formfields[i].value == '') {
-            formfields[i].style.background = 'red';
+            formfields[i].style.background = 'purple';
         }
     }
 }
