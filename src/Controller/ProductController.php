@@ -47,6 +47,7 @@ class ProductController extends AbstractController
             $mngr->persist($product);
             $mngr->flush();
 
+            // Choix volontaire de rester sur la même page après avoir effectué la réservation, raison pour laquelle il n'y a pas de 'return' à cette endroit
         }
 
         return $this->render('product/detail.html.twig', [
@@ -61,7 +62,6 @@ class ProductController extends AbstractController
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
-
 
         if($form->isSubmitted()&& $form->isValid()){
 
