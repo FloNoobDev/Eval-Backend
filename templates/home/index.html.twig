@@ -23,6 +23,9 @@
         </div>
         <div class="card-footer">
             <a href="{{ path('product-detail',{'id': product.id} ) }}" class="btn btn-info">Détail</a>
+            {% if product.getReservationText != '' %}
+            <p class="btn btn-danger">Déjà Pris</p>
+            {% endif %}            
         </div>
     </div>
         </div>

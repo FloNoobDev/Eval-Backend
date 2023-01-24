@@ -21,8 +21,11 @@
         <div class="card-title"><h4 class="fw-bold text-uppercase">{{product.title}}</h4></div>
         <div class="card-text"><p>{{product.description}}</p></div>
     </div>
-    <div class="card-footer">
+    <div class="card-footer text-end">
         <a href="{{ path('product-detail',{'id': product.id} ) }}" class="btn btn-info">Détail</a>
+        {% if product.getReservationText != '' %}
+        <p class="btn btn-danger">Déjà Pris</p>
+        {% endif %}
     </div>
 </div>
     </div>

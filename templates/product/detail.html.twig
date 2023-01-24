@@ -30,10 +30,11 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row my-2">
         <div class="col-5">
             {% if form is null %}
-            <p>Produit réservé</p>
+            <h5 class="btn btn-danger">Déjà Pris</h5>
+            <p>Commentaire de réservation: {{product.getReservationText}}</p>
             {% else %}
             {% include "product/form.res.html.twig" %}
             {% endif %}
