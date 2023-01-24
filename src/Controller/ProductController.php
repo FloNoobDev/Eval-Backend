@@ -43,6 +43,10 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             
+            $mngr = $this->managerRegistry->getManager();
+            $mngr->persist($product);
+            $mngr->flush();
+
         }
 
         return $this->render('product/detail.html.twig', [

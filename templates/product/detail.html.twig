@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail produit{% endblock %}
+
+{% block body %}
+
+<main class="container">
+
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center">Présentation détaillée</h3>
+        </div>
+        <div class="col-12">
+            <h4>{{product.title}}</h4>
+        </div>
+    </div>
+
+    <div class="p-3 row">
+        <div class="offset-4 col-4">
+            <img src="{{asset('img/product/' ~ product.image)}}" alt="{{product.image}}">
+        </div>
+    </div>
+
+    <div class="row border border-dark rounded">
+        <div class="col-8">
+            <p>{{product.description}}</p>
+        </div>
+        <div class="offset-1 col-2">
+            <p>Tarif :{{product.price}}€</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            {% if form is null %}
+            <p>Produit réservé</p>
+            {% else %}
+            {% include "product/form.res.html.twig" %}
+            {% endif %}
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
