@@ -2,21 +2,7 @@
 
 {% block title %}Create Product{% endblock %}
 
-{% block javascripts %} 
-{# <script defer src="js/formValid.js"></script> #}
-<script defer type="text/javascript">
-    function validate() {
-   
-        let formfields= document.forms['product'].getElementsByClassName('form-control');
-
-        for(let i=0;i<formfields.length;i++){
-            if(formfields[i].value ==''){
-                formfields[i].style.background = 'red';
-            }
-        }
-     }
-</script>
- {% endblock %}
+{% block javascripts %} <script defer src="{{asset('js/formValid.js')}}"></script> {% endblock %}
 
 {% block body %}
 
