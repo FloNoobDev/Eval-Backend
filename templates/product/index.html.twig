@@ -4,5 +4,31 @@
 
 {% block body %}
 
+<main class="container-fluid">
+
+<div class="row">
+    <div class="col-12"><h3 class="text-center">Tous nos produits</h3></div>
+</div>
+
+<div class="p-3 row">
+    {% for product in products %}
+    <div class="col-3">
+<div class="card">
+    <div class="card-image">
+        <img src="{{asset('img/product/' ~ product.image )}}" alt="{{product.image}}">
+    </div>
+    <div class="card-body">
+        <div class="card-title"><h4 class="fw-bold">{{product.title}}</h4></div>
+        <div class="card-text"><p>{{product.description}}</p></div>
+    </div>
+    <div class="card-footer">
+        <a href="{{ path('product-detail',{'id': product.id} ) }}" class="btn btn-info">Détail</a>
+    </div>
+</div>
+    </div>
+    {% endfor %}
+</div>
+
+</main>
 
 {% endblock %}
